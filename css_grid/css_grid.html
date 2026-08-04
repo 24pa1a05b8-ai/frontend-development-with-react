@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css grid</title>
+    <style>
+        .gallery{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .gallery img{
+            width: 100%;
+            height: auto;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">PHOTO GALLERY USING CSS</h1>
+    <div class="gallery">
+        <img src="vishnu logo.png" alt="Image 1">
+        <img src="vishnu logo.png" alt="Image 2">
+        <img src="vishnu logo.png" alt="Image 3">
+        <img src="vishnu logo.png" alt="Image 4">
+        <img src="vishnu logo.png" alt="Image 5">
+        <img src="vishnu logo.png" alt="Image 6">
+    </div>
+</body>
+</html>
