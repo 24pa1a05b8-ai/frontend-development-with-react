@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .registration {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .registration h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="registration">
+        <h2>REGISTRATION FORM</h2>
+
+        <form action="submit_registration.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="10" max="100" required><br>
+
+            <label>Gender:</label>
+            <div class="radio-group">
+                <label for="male"><input type="radio" id="male" name="gender" value="male" required> Male</label>
+                <label for="female"><input type="radio" id="female" name="gender" value="female" required> Female</label>
+            </div><br>
+
+            <label for="branch">Choose your branch:</label>
+            <select id="branch" name="branch" required>
+                <option value="">Select Branch</option>
+                <option value="CSE">Computer Science and Engineering</option>
+                <option value="ECE">Electronics and Communication Engineering</option>
+                <option value="EEE">Electrical and Electronics Engineering</option>
+                <option value="IT">Information Technology</option>
+            </select><br>
+
+            <label>Choose your skills:</label>
+            <div class="checkbox-group">
+                <label for="python"><input type="checkbox" id="python" name="skills" value="python"> Python</label>
+                <label for="java"><input type="checkbox" id="java" name="skills" value="java"> Java</label>
+                <label for="javascript"><input type="checkbox" id="javascript" name="skills" value="javascript"> JavaScript</label>
+                <label for="c"><input type="checkbox" id="c" name="skills" value="c"> C/C++</label>
+            </div><br>
+
+            <button type="submit">Register</button><br>
+        </form>
+    </div>
+</body>
+</html>
