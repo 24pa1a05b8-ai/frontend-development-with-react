@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>printing names from objects</title>
+</head>
+<body>
+    <script>
+        let students = [
+            { name: "vyshnavi", id:1 },
+            { name: "Teja", id:2 },
+            { name: "Bhavya", id:3 }
+        ];
+
+       let studentNames = students.map(student => student.name);
+
+        console.log(studentNames);
+        document.write("Student Names: " + studentNames);
+    </script>
+</body>
+</html>
