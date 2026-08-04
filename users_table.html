@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+    <h2>System Users</h2>
+    
+    <table border="1" class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Website</th>
+                <th>Company</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td colspan="5">Loading data...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tableBody = document.getElementById("tableBody");
+            const API_URL = "https://api.escuelajs.co/api/v1/users";
+
+            fetch(API_URL)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network error");
+                    }
+                    return response.json();
+                })
+                .then(users => {
+                    tableBody.innerHTML = ""; 
+                    users.forEach(user => {
+                        const row = document.createElement("tr");
+                        
+                        row.innerHTML = `
+                            <td>${user.id}</td>
+                            <td>${user.email}</td>
+                            <td>${user.password}</td>
+                            <td>${user.name}</td>
+                            <td>${user.role}</td>
+                            <td>${user.avatar}</td>
+                        `;
+                        
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    tableBody.innerHTML = `<tr><td colspan="5">Error loading data.</td></tr>`;
+                });
+        });
+    </script>
+
+</body>
+</html>
