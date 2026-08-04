@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage Tester</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        .display-box { background: #f4f4f4; padding: 10px; margin-top: 10px; font-weight: bold; min-height: 20px; }
+        button { margin: 5px; padding: 5px 10px; cursor: pointer; }
+        input { padding: 5px; margin: 5px; }
+    </style>
+</head>
+<body>
+
+    <h2>Web Storage Demonstration (Local vs Session)</h2>
+
+
+    <div class="section">
+        <h3>Local Storage Operations</h3>
+        <input type="text" id="localKey" placeholder="Enter Key">
+        <input type="text" id="localValue" placeholder="Enter Value">
+        <br>
+        <button onclick="createLocal()">Create / Set Item</button>
+        <button onclick="getLocal()">Get Item</button>
+        <button onclick="removeLocal()">Remove Item</button>
+        <button onclick="clearLocal()">Clear All</button>
+        
+        <h4>Current Display:</h4>
+        <div id="localDisplay" class="display-box">No data fetched yet.</div>
+    </div>
+
+
+    <div class="section">
+        <h3>Session Storage Operations</h3>
+        <input type="text" id="sessionKey" placeholder="Enter Key">
+        <input type="text" id="sessionValue" placeholder="Enter Value">
+        <br>
+        <button onclick="createSession()">Create / Set Item</button>
+        <button onclick="getSession()">Get Item</button>
+        <button onclick="removeSession()">Remove Item</button>
+        <button onclick="clearSession()">Clear All</button>
+        
+        <h4>Current Display:</h4>
+        <div id="sessionDisplay" class="display-box">No data fetched yet.</div>
+    </div>
+
+    <script src="local_storage.js"></script>
+    <script src="session_storage.js"></script>
+</body>
+</html>
